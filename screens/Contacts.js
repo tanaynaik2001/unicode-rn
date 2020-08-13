@@ -87,10 +87,11 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
+    borderBottomWidth: 1,
+    borderBottomColor: '#ccc',
   },
   name: {
     fontSize: 20,
-
     marginVertical: 7,
   },
 });

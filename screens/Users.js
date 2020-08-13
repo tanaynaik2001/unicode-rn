@@ -5,8 +5,8 @@ import {
   View,
   TextInput,
   Button,
-  Platform,
   KeyboardAvoidingView,
+  Dimensions,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import AsyncStorage from '@react-native-community/async-storage';
@@ -41,27 +41,22 @@ const Users = () => {
       const firstNameData = await AsyncStorage.getItem(firstName_key);
       if (firstNameData !== null) {
         setFirstName(firstNameData);
-        // value previously stored
       }
       const lastNameData = await AsyncStorage.getItem(lastName_key);
       if (lastNameData !== null) {
         setLastName(lastNameData);
-        // value previously stored
       }
       const emailIdData = await AsyncStorage.getItem(emailId_key);
       if (emailIdData !== null) {
         setEmailId(emailIdData);
-        // value previously stored
       }
       const mobileNoData = await AsyncStorage.getItem(number_key);
       if (mobileNoData !== null) {
         setNumber(mobileNoData);
-        // value previously stored
       }
       const dobData = await AsyncStorage.getItem(dob_key);
       if (dobData !== null) {
         setDob(dobData);
-        // value previously stored
       }
     } catch (e) {
       alert(e);
@@ -168,7 +163,6 @@ export default Users;
 const styles = StyleSheet.create({
   inputContainer: {
     marginVertical: '20%',
-    width: '100%',
     padding: 10,
     borderWidth: 2,
     borderRadius: 10,
@@ -176,16 +170,15 @@ const styles = StyleSheet.create({
   fieldContainer: {
     flexDirection: 'row',
     marginVertical: 10,
-    justifyContent: 'center',
     alignItems: 'center',
   },
   title: {
     fontSize: 20,
-    fontFamily: 'OpenSans-SemiBold',
     fontWeight: '800',
   },
   input: {
-    fontSize: 17,
+    fontSize: Dimensions.get('window').width >= 380 ? 19 : 13,
+    fontFamily: 'OpenSans-Light',
   },
   btn: {
     flexDirection: 'row',

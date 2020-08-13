@@ -8,7 +8,6 @@ import {
   Button,
   KeyboardAvoidingView,
 } from 'react-native';
-import {HeaderButtons, Item} from 'react-navigation-header-buttons';
 import Menu from 'react-native-vector-icons/FontAwesome';
 const WeatherForecast = () => {
   const api = {
@@ -107,7 +106,8 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   name: {
-    fontSize: 40,
+    fontSize: 36,
+    color: '#086f91',
   },
   weather: {
     marginVertical: 80,
@@ -122,6 +122,7 @@ const styles = StyleSheet.create({
   },
   condition: {
     fontSize: 30,
+    color: '#a83c20',
   },
   section: {
     justifyContent: 'space-between',
