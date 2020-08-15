@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Menu from 'react-native-vector-icons/FontAwesome';
 import Contactss from 'react-native-contacts';
+import {Card, Avatar} from 'react-native-paper';
 
 const Contacts = (props) => {
   const selectedName = (initial, displayName, number) => {

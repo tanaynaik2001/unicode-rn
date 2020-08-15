@@ -3,12 +3,12 @@ import {
   StyleSheet,
   Text,
   View,
-  Platform,
   TextInput,
   Button,
   KeyboardAvoidingView,
 } from 'react-native';
 import Menu from 'react-native-vector-icons/FontAwesome';
+import {Searchbar} from 'react-native-paper';
 const WeatherForecast = () => {
   const api = {
     key: 'd154b42b9e5990d9bc902e6536d962b1',
@@ -31,16 +31,17 @@ const WeatherForecast = () => {
   return (
     <KeyboardAvoidingView>
       <View style={styles.screen}>
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.input}
-            placeholder="Enter the name of city or country"
-            value={query}
-            onChangeText={(location) => setQuery(location)}
-          />
-          <View style={styles.btn}>
-            <Button title="Submit" onPress={search} color="#282828" />
-          </View>
+        <Searchbar
+          style={{
+            margin: 10,
+            elevation: 7,
+          }}
+          placeholder="Enter the name of city or country"
+          value={query}
+          onChangeText={(location) => setQuery(location)}
+        />
+        <View style={styles.btn}>
+          <Button title="Submit" onPress={search} color="#282828" />
         </View>
         {typeof weather.main != 'undefined' ? (
           <View style={styles.section}>
